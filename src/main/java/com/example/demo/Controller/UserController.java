@@ -22,22 +22,25 @@ public class UserController {
 	@Autowired
 	 UserServiceImpl  userServiceImpl;
 
-	
+	//for post the user
 	@PostMapping("/addUser")
 	public User AddUserData( @RequestBody User user) {
 		return	 userServiceImpl.addUserData(user);
 		
 	}
+	// for getting user
 	@GetMapping("/getUser")
 	public List<User> GetUserData( ) {
 		return	 userServiceImpl.getUserData();
 		
 	}
+	//for getting user by id
 	@GetMapping("/getUser/{id}")
 	public Optional<User> GetUserDataById(@PathVariable int id ) {
 		return	 userServiceImpl.getUserDataById(id);
 		
 	}
+	//for updating user
 	@PutMapping("/getUser/{id}")
 	public ResponseEntity<User> UpdateUserData(@PathVariable int id , @RequestBody User user ) {
 		 User updatedUser= userServiceImpl.updateUserData(id, user);
@@ -53,7 +56,7 @@ public class UserController {
 	}
 	
 	
-	//for delete 
+	//for delete users 
 	@DeleteMapping("/getUser/{id}")
 	public ResponseEntity<Void> DeleteUserData(@PathVariable int id ) {
 		  userServiceImpl.deleteUserDataById(id);

@@ -53,7 +53,7 @@ public class UserController {
 	}
 	
 	
-	
+	//for delete 
 	@DeleteMapping("/getUser/{id}")
 	public ResponseEntity<Void> DeleteUserData(@PathVariable int id ) {
 		  userServiceImpl.deleteUserDataById(id);

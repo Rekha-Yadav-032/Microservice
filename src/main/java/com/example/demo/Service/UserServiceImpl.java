@@ -43,10 +43,11 @@ public class UserServiceImpl implements UserService {
 	return null;
 	
 	}
-
+//for deleting user
+	
 	@Override
 	public void deleteUserDataById(int id) {
-		// TODO Auto-generated method stub
+		
 		
 		  userRepository.deleteById(id);
 	}
